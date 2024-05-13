@@ -98,7 +98,7 @@ display(await(
 ))
 }});
 
-define({id: "6943e0cd", inputs: ["FileAttachment","view","Inputs"], outputs: ["roles","role_sel","year_sel"], body: async (FileAttachment,view,Inputs) => {
+define({id: "2814c1a5", inputs: ["FileAttachment","view","Inputs"], outputs: ["roles","role_sel","year_sel"], body: async (FileAttachment,view,Inputs) => {
 const roles = await FileAttachment("./data/combine.json").json();
 const role_sel = view(
 	Inputs.select(roles, {
@@ -108,7 +108,7 @@ const role_sel = view(
 	})
 );
 const year_sel = view(
-	Inputs.select([2019, 2020, 2021, 2022, 2023], {
+	Inputs.select([2019, 2020, 2021, 2022, 2023, 2024], {
 		label: "Year"
 	})
 );
@@ -188,7 +188,7 @@ display(await(
   <h2>Statistics on the data quality and completeness of the EAMENA database.</h2>
 </div>
   <div class="card"><span id="cell-fdcc03e8" class="observablehq--loading"></span></div>
-<div id="cell-6943e0cd" class="observablehq observablehq--block"></div>
+<div id="cell-2814c1a5" class="observablehq observablehq--block"></div>
 <div class="grid grid-cols-3">
   <div class="card">
 	<p> Total sites </p>
@@ -206,6 +206,6 @@ display(await(
   <div class="card"><span id="cell-f0c2513b" class="observablehq--loading"></span></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-05-13T15:14:17">May 13, 2024</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-05-13T17:05:16">May 13, 2024</a>.</div>
 </footer>
 </div>
