@@ -12,9 +12,9 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
-<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
@@ -58,6 +58,8 @@ import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
 registerFile("./data/combine.json", {"name":"./data/combine.json","mimeType":"application/json","path":"./_file/data/combine.c2ec0a75.json","lastModified":1715092161518});
+registerFile("./data/countries.json", {"name":"./data/countries.json","mimeType":"application/json","path":"./_file/data/countries.027fc2f5.json","lastModified":1716970641691});
+registerFile("./data/years.json", {"name":"./data/years.json","mimeType":"application/json","path":"./_file/data/years.1c8a1d95.json","lastModified":1717001259177});
 
 define({id: "fdcc03e8", inline: true, inputs: ["resize","Plot","roles","display"], body: async (resize,Plot,roles,display) => {
 display(await(
@@ -98,8 +100,10 @@ display(await(
 ))
 }});
 
-define({id: "2814c1a5", inputs: ["FileAttachment","view","Inputs"], outputs: ["roles","role_sel","year_sel"], body: async (FileAttachment,view,Inputs) => {
+define({id: "9c3ac3d2", inputs: ["FileAttachment","view","Inputs"], outputs: ["years","roles","countries","role_sel","year_sel"], body: async (FileAttachment,view,Inputs) => {
+const years = await FileAttachment("./data/years.json").json();
 const roles = await FileAttachment("./data/combine.json").json();
+const countries = await FileAttachment("./data/countries.json").json();
 const role_sel = view(
 	Inputs.select(roles, {
 		label: "Role",
@@ -108,11 +112,12 @@ const role_sel = view(
 	})
 );
 const year_sel = view(
-	Inputs.select([2019, 2020, 2021, 2022, 2023, 2024], {
+	Inputs.select(years, {
 		label: "Year"
 	})
 );
-return {roles,role_sel,year_sel};
+
+return {years,roles,countries,role_sel,year_sel};
 }});
 
 define({id: "c41264a4", inline: true, inputs: ["role_sel","year_sel","display"], body: async (role_sel,year_sel,display) => {
@@ -133,10 +138,50 @@ display(await(
 ))
 }});
 
-define({id: "f0c2513b", inline: true, inputs: ["Inputs","role_sel","year_sel","display"], body: async (Inputs,role_sel,year_sel,display) => {
-display(await(
- Inputs.table(role_sel.filter((d) => d.year === year_sel).map((d) => d.countries).flat().filter((d) => d.sites.role_year > 0), {columns: ['label', 'sites', 'grids'], header: {'label': 'Country', 'sites': 'Sites uploaded/ammended', 'grids': 'Grid squares covered'}, format: {'sites': (x) => x.role_year, 'grids': (x) => x.role_year}, sort: 'label'}) 
-))
+define({id: "089f2710", inputs: ["role_sel","year_sel","countries","view","Inputs","htl"], outputs: ["filename","selected_grids","maindata_sel"], body: (role_sel,year_sel,countries,view,Inputs,htl) => {
+function filename(type, role, year, row)
+{
+	return role['role']['id'] + '_' + type + '_' + year + '.html';
+}
+
+function selected_grids(table)
+{
+	var id = '';
+	var data = {}
+	var ret = []
+
+	for(var i = 0; i < table.length; i++)
+	{
+		id = table[i].id;
+		var temp_data = role_sel.filter((d) => d.year === year_sel)[0]['country_role_year'][id]['grids'];
+		for(var j = 0; j < temp_data.length; j++)
+		{
+			var grid = temp_data[j];
+			if(!(grid in data)) { data[grid] = {'label': grid, 'countries': []}; }
+			data[grid]['countries'].push(countries[id]);
+		}
+	}
+	for(var key in data) { ret.push(data[key]); }
+	return ret;
+}
+
+const maindata_sel = view(Inputs.table(role_sel.filter((d) => d.year === year_sel).map((d) => d.countries).flat().filter((d) => d.sites.role_year > 0), {
+	columns: ['label', 'sites', 'grids'],
+	header: {'label': 'Country', 'sites': 'Sites uploaded/ammended', 'grids': 'Grid squares covered'},
+	format: {
+		'sites': (x) => htl.html`<strong>${ x.role_year }</strong>&nbsp;<a href="${ filename('sites', role_sel.filter((y) => y.year === year_sel).flat()[0], year_sel, '') }"></a>`,
+		'grids': (x) => htl.html`<strong>${ x.role_year }</strong>&nbsp;<a href="${ filename('grids', role_sel.filter((y) => y.year === year_sel).flat()[0], year_sel, '') }"></a>`
+	},
+	sort: 'label'}));
+
+return {filename,selected_grids,maindata_sel};
+}});
+
+define({id: "0980d38d", inline: true, inputs: ["view","Inputs","selected_grids","maindata_sel"], body: (view,Inputs,selected_grids,maindata_sel) => {
+ view(Inputs.table(selected_grids(maindata_sel), {
+	columns: ['label', 'countries'],
+	header: {'label': 'Grid square', 'countries': 'Country / Countries'},
+  })) 
 }});
 
 </script>
@@ -176,6 +221,13 @@ display(await(
   color: var(--theme-foreground-muted);
 }
 
+.nocheckbox td:nth-child(1), .nocheckbox th:nth-child(1) {
+  display: none;
+}
+.nocheckbox td:nth-child(2), .nocheckbox th:nth-child(2) {
+  padding-left: 0px;
+}
+
 @media (min-width: 640px) {
   .hero h1 {
     font-size: 90px;
@@ -188,7 +240,7 @@ display(await(
   <h2>Statistics on the data quality and completeness of the EAMENA database.</h2>
 </div>
   <div class="card"><span id="cell-fdcc03e8" class="observablehq--loading"></span></div>
-<div id="cell-2814c1a5" class="observablehq observablehq--block"></div>
+<div id="cell-9c3ac3d2" class="observablehq observablehq--block"></div>
 <div class="grid grid-cols-3">
   <div class="card">
 	<p> Total sites </p>
@@ -203,9 +255,16 @@ display(await(
 	<h2> <span id="cell-07c026c8" class="observablehq--loading"></span> </h2>
   </div>
 </div>
-  <div class="card"><span id="cell-f0c2513b" class="observablehq--loading"></span></div>
+<div id="cell-089f2710" class="observablehq observablehq--block"></div>
+<div class="grid grid-cols-2">
+<div class="card">
+  <h2>Grid Squares</h2>
+  <span id="cell-0980d38d" class="observablehq--loading"></span>
+</div>
+<div class="card"> <h2>Sites</h2> </div>
+</div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-05-29T17:42:19">May 29, 2024</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-05-29T17:47:34">May 29, 2024</a>.</div>
 </footer>
 </div>
