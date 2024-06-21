@@ -58,8 +58,8 @@ import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
 registerFile("./data/combine.json", {"name":"./data/combine.json","mimeType":"application/json","path":"./_file/data/combine.45c0e1be.json","lastModified":1718699421882});
-registerFile("./data/countries.json", {"name":"./data/countries.json","mimeType":"application/json","path":"./_file/data/countries.027fc2f5.json","lastModified":1718697941351});
-registerFile("./data/grid_data.json", {"name":"./data/grid_data.json","mimeType":"application/json","path":"./_file/data/grid_data.4b990977.json","lastModified":1718697948647});
+registerFile("./data/countries.json", {"name":"./data/countries.json","mimeType":"application/json","path":"./_file/data/countries.027fc2f5.json","lastModified":1718957115689});
+registerFile("./data/grid_data.json", {"name":"./data/grid_data.json","mimeType":"application/json","path":"./_file/data/grid_data.4b990977.json","lastModified":1718957123061});
 registerFile("./data/years.json", {"name":"./data/years.json","mimeType":"application/json","path":"./_file/data/years.3858fed4.json","lastModified":1718699421550});
 
 define({id: "fdcc03e8", inline: true, inputs: ["resize","Plot","roles","display"], body: async (resize,Plot,roles,display) => {
@@ -236,12 +236,12 @@ const maindata_sel = view(Inputs.table(role_sel.filter((d) => d.year === year_se
 return {filename,selected_grids,selected_sites,maindata_sel};
 }});
 
-define({id: "c5dc80ab", inputs: ["view","Inputs","selected_grids","maindata_sel","htl"], outputs: ["grid_sel"], body: (view,Inputs,selected_grids,maindata_sel,htl) => {
+define({id: "c52cc753", inputs: ["view","Inputs","selected_grids","maindata_sel","htl"], outputs: ["grid_sel"], body: (view,Inputs,selected_grids,maindata_sel,htl) => {
 const grid_sel = view(Inputs.table(selected_grids(maindata_sel), {
 	columns: ['label', 'countries'],
 	header: {'label': 'Grid square', 'countries': 'Country / Countries'},
 	format: {
-		'label': (x) => htl.html`<strong>${ x }</strong>`,
+		'label': (x) => htl.html`<strong>${ x }</strong> <a href="${ x }.html">Detail</a>`,
 	},
   }));
 
@@ -334,7 +334,7 @@ return {site_sel};
 <div id="cell-68c5595d" class="observablehq observablehq--block"></div>
 <div class="grid grid-cols-2">
 <div class="card">
-<div id="cell-c5dc80ab" class="observablehq observablehq--block"></div>
+<div id="cell-c52cc753" class="observablehq observablehq--block"></div>
 </div>
 <div class="card">
 <div id="cell-48efa956" class="observablehq observablehq--block"></div>
@@ -342,6 +342,6 @@ return {site_sel};
 </div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-06-18T09:30:09">Jun 18, 2024</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-06-21T09:30:50">Jun 21, 2024</a>.</div>
 </footer>
 </div>
