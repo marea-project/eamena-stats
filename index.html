@@ -122,9 +122,33 @@ const year_sel = view(
 return {years,roles,countries,grid_data,role_sel,year_sel};
 }});
 
+define({id: "8843f5fd", inline: true, inputs: ["role_sel","year_sel","display"], body: async (role_sel,year_sel,display) => {
+display(await(
+ role_sel.filter((d) => d.year === year_sel).flat()[0].role_total 
+))
+}});
+
+define({id: "99291b38", inline: true, inputs: ["role_sel","year_sel","display"], body: async (role_sel,year_sel,display) => {
+display(await(
+ role_sel.filter((d) => d.year === year_sel).flat()[0].grid_role 
+))
+}});
+
+define({id: "9214a055", inline: true, inputs: ["year_sel","display"], body: async (year_sel,display) => {
+display(await(
+ year_sel 
+))
+}});
+
 define({id: "c41264a4", inline: true, inputs: ["role_sel","year_sel","display"], body: async (role_sel,year_sel,display) => {
 display(await(
  role_sel.filter((d) => d.year === year_sel).flat()[0].role_year_total 
+))
+}});
+
+define({id: "9214a055-1", inline: true, inputs: ["year_sel","display"], body: async (year_sel,display) => {
+display(await(
+ year_sel 
 ))
 }});
 
@@ -134,13 +158,7 @@ display(await(
 ))
 }});
 
-define({id: "07c026c8", inline: true, inputs: ["role_sel","year_sel","display"], body: async (role_sel,year_sel,display) => {
-display(await(
- role_sel.filter((d) => d.year === year_sel).flat()[0].role_year_bulk 
-))
-}});
-
-define({id: "68c5595d", inputs: ["role_sel","year_sel","countries","grid_data","view","Inputs","htl"], outputs: ["filename","selected_grids","selected_sites","maindata_sel"], body: (role_sel,year_sel,countries,grid_data,view,Inputs,htl) => {
+define({id: "f9ee82bf", inputs: ["role_sel","year_sel","countries","grid_data","view","Inputs","htl"], outputs: ["filename","selected_grids","selected_sites","maindata_sel"], body: (role_sel,year_sel,countries,grid_data,view,Inputs,htl) => {
 function filename(type, role, year, row)
 {
 	return role['role']['id'] + '_' + type + '_' + year + '.html';
@@ -226,10 +244,10 @@ function selected_sites(table)
 
 const maindata_sel = view(Inputs.table(role_sel.filter((d) => d.year === year_sel).map((d) => d.countries).flat().filter((d) => d.sites.role_year > 0), {
 	columns: ['label', 'sites', 'grids'],
-	header: {'label': 'Country', 'sites': 'Sites uploaded/ammended', 'grids': 'Grid squares covered'},
+	header: {'label': 'Country', 'sites': 'Sites (year/total)', 'grids': 'Grid squares (year/total)'},
 	format: {
-		'sites': (x) => htl.html`<strong>${ x.role_year }</strong>&nbsp;<a href="${ filename('sites', role_sel.filter((y) => y.year === year_sel).flat()[0], year_sel, '') }"></a>`,
-		'grids': (x) => htl.html`<strong>${ x.role_year }</strong>&nbsp;<a href="${ filename('grids', role_sel.filter((y) => y.year === year_sel).flat()[0], year_sel, '') }"></a>`
+		'sites': (x) => htl.html`<strong>${ x.role_year } / ${ x.role }</strong>&nbsp;<a href="${ filename('sites', role_sel.filter((y) => y.year === year_sel).flat()[0], year_sel, '') }"></a>`,
+		'grids': (x) => htl.html`<strong>${ x.role_year } / ${ x.role }</strong>&nbsp;<a href="${ filename('grids', role_sel.filter((y) => y.year === year_sel).flat()[0], year_sel, '') }"></a>`
 	},
 	sort: 'label'}));
 
@@ -317,21 +335,25 @@ return {site_sel};
 </div>
   <div class="card"><span id="cell-fdcc03e8" class="observablehq--loading"></span></div>
 <div id="cell-cbd8ea79" class="observablehq observablehq--block"></div>
-<div class="grid grid-cols-3">
+<div class="grid grid-cols-4">
   <div class="card">
 	<p> Total sites </p>
-	<h2> <span id="cell-c41264a4" class="observablehq--loading"></span> </h2>
+	<h2> <span id="cell-8843f5fd" class="observablehq--loading"></span> </h2>
   </div>
   <div class="card">
 	<p> Total grid squares </p>
-	<h2> <span id="cell-1f4478d1" class="observablehq--loading"></span> </h2>
+	<h2> <span id="cell-99291b38" class="observablehq--loading"></span> </h2>
   </div>
   <div class="card">
-	<p> Bulk uploads </p>
-	<h2> <span id="cell-07c026c8" class="observablehq--loading"></span> </h2>
+	<p> <span id="cell-9214a055" class="observablehq--loading"></span> sites </p>
+	<h2> <span id="cell-c41264a4" class="observablehq--loading"></span> </h2>
+  </div>
+  <div class="card">
+	<p> <span id="cell-9214a055-1" class="observablehq--loading"></span> grid squares </p>
+	<h2> <span id="cell-1f4478d1" class="observablehq--loading"></span> </h2>
   </div>
 </div>
-<div id="cell-68c5595d" class="observablehq observablehq--block"></div>
+<div id="cell-f9ee82bf" class="observablehq observablehq--block"></div>
 <div class="grid grid-cols-2">
 <div class="card">
 <div id="cell-c52cc753" class="observablehq observablehq--block"></div>
@@ -342,6 +364,6 @@ return {site_sel};
 </div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-07-05T09:31:09">Jul 5, 2024</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-07-05T11:54:19">Jul 5, 2024</a>.</div>
 </footer>
 </div>
