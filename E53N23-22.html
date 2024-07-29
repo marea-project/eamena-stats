@@ -57,12 +57,12 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/grids/E53N23-22.json", {"name":"./data/grids/E53N23-22.json","mimeType":"application/json","path":"./_file/data/grids/E53N23-22.f94d7b9a.json","lastModified":1722241832879});
+registerFile("./data/grids/E53N23-22.json", {"name":"./data/grids/E53N23-22.json","mimeType":"application/json","path":"./_file/data/grids/E53N23-22.c11dad9f.json","lastModified":1722265258488});
 
-define({id: "ae3f6eee", inputs: ["FileAttachment","view","Inputs","htl"], outputs: ["grid_data","summarise","role_expand","site_sel"], body: async (FileAttachment,view,Inputs,htl) => {
+define({id: "f4e90350", inputs: ["FileAttachment","view","Inputs","htl"], outputs: ["grid_data","summarise_tiles","summarise_damage","role_expand","site_sel"], body: async (FileAttachment,view,Inputs,htl) => {
 const grid_data = await FileAttachment("./data/grids/E53N23-22.json").json();
 
-function summarise(item)
+function summarise_tiles(item)
 {
 	console.log(item);
 
@@ -75,6 +75,30 @@ function summarise(item)
 			const kv = item[i].Tiles[j];
 			const k = kv[0];
 			const v = parseInt(kv[1]);
+			if(!(k in intret)) { intret[k] = 0; }
+			intret[k] = intret[k] + v;
+		}
+	}
+	console.log(intret);
+	for (const [key, value] of Object.entries(intret))
+	{
+		ret.push({'label': key, 'records': value})
+	}
+	return ret;
+}
+
+function summarise_damage(item)
+{
+	console.log(item);
+
+	var intret = {};
+	var ret = [];
+	for(var i=0; i < item.length; i++)
+	{
+		for(var j=0; j < item[i].Disturbances.length; j++)
+		{
+			const k = item[i].Disturbances[j];
+			const v = 1;
 			if(!(k in intret)) { intret[k] = 0; }
 			intret[k] = intret[k] + v;
 		}
@@ -101,7 +125,7 @@ function role_expand(role)
 	return role.label;
 }
 
-const site_sel = view(Inputs.table(grid_data, {
+const site_sel = view(Inputs.table(grid_data['sites'], {
         columns: ['Label', 'Role', 'Date', 'Tiles', 'ID'],
         header: {'Label': 'EAMENA ID', 'Date': 'Assessment Date(s)', 'Tiles': 'Assessments', 'ID': ''},
         format: {
@@ -111,10 +135,10 @@ const site_sel = view(Inputs.table(grid_data, {
         },
   }));
 
-return {grid_data,summarise,role_expand,site_sel};
+return {grid_data,summarise_tiles,summarise_damage,role_expand,site_sel};
 }});
 
-define({id: "14d25f49", inline: true, inputs: ["resize","Plot","summarise","site_sel","display"], body: async (resize,Plot,summarise,site_sel,display) => {
+define({id: "bacb24d4", inline: true, inputs: ["resize","Plot","summarise_tiles","site_sel","display"], body: async (resize,Plot,summarise_tiles,site_sel,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Resource Instance Components",
@@ -124,13 +148,13 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX(summarise(site_sel), {
+                Plot.barX(summarise_tiles(site_sel), {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label"
                 }),
-                Plot.text(summarise(site_sel), {
+                Plot.text(summarise_tiles(site_sel), {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -138,7 +162,45 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text(summarise(site_sel), {
+                Plot.text(summarise_tiles(site_sel), {
+                        text: d => d.label,
+                        textAnchor: "end",
+                        x: 0,
+                        y: "label",
+                        dx: -3,
+                        fill: "white"
+                })
+        ]
+    }))
+  
+))
+}});
+
+define({id: "47db1845", inline: true, inputs: ["resize","Plot","summarise_damage","site_sel","display"], body: async (resize,Plot,summarise_damage,site_sel,display) => {
+display(await(
+    resize((width) => Plot.plot({
+        label: "Disturbance Causes",
+        marginLeft: 250,
+        marginRight: 30,
+        width: width,
+        x: { axis: null },
+        y: { axis: null },
+        marks: [
+                Plot.barX(summarise_damage(site_sel), {
+                        x: "records",
+                        y: "label",
+                        color: { legend: false },
+                        fill: "label"
+                }),
+                Plot.text(summarise_damage(site_sel), {
+                        text: d => `${ d.records }`,
+                        x: "records",
+                        y: "label",
+                        textAnchor: "start",
+                        dx: 3,
+                        fill: "white"
+                }),
+                Plot.text(summarise_damage(site_sel), {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -156,10 +218,13 @@ display(await(
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <h1 id="e53n23-22" tabindex="-1"><a class="observablehq-header-anchor" href="#e53n23-22">E53N23-22</a></h1>
-<div id="cell-ae3f6eee" class="observablehq observablehq--block"></div>
-  <div class="card"><span id="cell-14d25f49" class="observablehq--loading"></span></div>
+<div id="cell-f4e90350" class="observablehq observablehq--block"></div>
+  <h2>Grid Completeness</h2>
+  <div class="card"><span id="cell-bacb24d4" class="observablehq--loading"></span></div>
+  <h2>Disturbance Causes</h2>
+  <div class="card"><span id="cell-47db1845" class="observablehq--loading"></span></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-07-29T09:31:45">Jul 29, 2024</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-07-29T16:02:05">Jul 29, 2024</a>.</div>
 </footer>
 </div>
