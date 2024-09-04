@@ -21,7 +21,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/errors.csv", {"name":"./data/errors.csv","mimeType":"text/csv","path":"./_file/data/errors.6b964b00.csv","lastModified":1725352391963});
+registerFile("./data/errors.csv", {"name":"./data/errors.csv","mimeType":"text/csv","path":"./_file/data/errors.6b964b00.csv","lastModified":1725438790312});
 
 define({id: "0a7c7086", inputs: ["FileAttachment","view","Inputs","htl"], outputs: ["errors","maindata_sel"], body: async (FileAttachment,view,Inputs,htl) => {
 const errors = await FileAttachment("./data/errors.csv").csv();
@@ -46,6 +46,6 @@ return {errors,maindata_sel};
 <div id="cell-0a7c7086" class="observablehq observablehq--block"></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-09-03T09:34:23">Sep 3, 2024</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-09-04T09:34:21">Sep 4, 2024</a>.</div>
 </footer>
 </div>
