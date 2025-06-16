@@ -10,33 +10,661 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/mermaid.js">
+<link rel="modulepreload" href="./_npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs._esm.js">
 <script type="module">
 
-import "./_observablehq/client.js";
+import {define} from "./_observablehq/client.js";
+
+define({id: "6a3d9aba", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Occupation/Continued Use (1) : 0, 1
+  Vegetation/Crops/Trees (1) : 0, 1
+  Water and/or Wind Action (1) : 0, 1
+  Construction (1) : 0, 1
+  Clearance (Bulldozing/Levelling) (1) : 0, 1
+  Ploughing (1) : 0, 1
+  Aquaculture (1) : 0, 1
+  Road/Track (1) : 0, 1
+  Excavation (Hand) (1) : 0, 1
+  Clearance (Unclassified) (1) : 0, 1
+  Coastal Erosion/Retreat (1) : 0, 1`
+))
+}});
+
+define({id: "0eef0dce", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Coastal Advance/Accretion (1) : 0, 1
+  Vegetation/Crops/Trees (1) : 0, 1
+  Water and/or Wind Action (1) : 0, 1
+  Dredging (1) : 0, 1
+  Wind Action (1) : 0, 1
+  Construction (1) : 0, 1
+  Clearance (Bulldozing/Levelling) (1) : 0, 1
+  Road/Track (1) : 0, 1
+  Cable/Pipe Laying (1) : 0, 1
+  Water Action (1) : 0, 1
+  Demolition/Destruction (1) : 0, 1`
+))
+}});
+
+define({id: "2042ddb5", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Water and/or Wind Action (1) : 0, 1`
+))
+}});
+
+define({id: "5af82dbb", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Water and/or Wind Action (1) : 0, 1
+  Land/Rock Slide (1) : 0, 1
+  Water Action (1) : 0, 1
+  Human Movement/Trampling (1) : 0, 1`
+))
+}});
+
+define({id: "2042ddb5-1", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Water and/or Wind Action (1) : 0, 1`
+))
+}});
+
+define({id: "9d57f6a5", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Breaking/Smashing (1) : 0, 1
+  Water and/or Wind Action (1) : 0, 1
+  Occupation/Continued Use (1) : 0, 1
+  Construction (1) : 0, 1
+  Clearance (Bulldozing/Levelling) (1) : 0, 1`
+))
+}});
+
+define({id: "6131a5be", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Clearance (Bulldozing/Levelling) (1) : 0, 1`
+))
+}});
 
 </script>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <style>
-
 .nocheckbox td:nth-child(1), .nocheckbox th:nth-child(1) {
   display: none;
 }
 .nocheckbox td:nth-child(2), .nocheckbox th:nth-child(2) {
   padding-left: 0px;
 }
-
 .card img {
   max-width: 100% !important;
 }
-
 </style>
 <h1 id="marea-stats-page" tabindex="-1"><a class="observablehq-header-anchor" href="#marea-stats-page">MarEA Stats Page</a></h1>
 <div class="card">
 <p><img src="./_file/map.3208bc5c.png" alt="Progress map"></p>
 </div>
+<h2 id="site-documentation" tabindex="-1"><a class="observablehq-header-anchor" href="#site-documentation">Site Documentation</a></h2>
+<div class="grid grid-cols-4">
+<div class="card"><p>MarEA Sites</p><h2>1036</h2></div>
+<div class="card"><p>MarEA Grids</p><h2>96</h2></div>
+<div class="card"><p>Total MarEA Sites</p><h2>22240</h2></div>
+<div class="card"><p>Total MarEA Grids</p><h2>746</h2></div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Grid Square</th>
+<th>Sites</th>
+<th>Researchers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E50N26-13</td>
+<td>170</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>E28N31-12</td>
+<td>77</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E28N31-11</td>
+<td>65</td>
+<td>Julia Nikolaus, Mohamed Osman</td>
+</tr>
+<tr>
+<td>E28N30-33</td>
+<td>62</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E50N25-31</td>
+<td>60</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>E28N30-43</td>
+<td>52</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E50N25-33</td>
+<td>39</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>E14N32-24</td>
+<td>38</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E28N30-34</td>
+<td>36</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E23N32-21</td>
+<td>34</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E50N26-11</td>
+<td>29</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>W10N29-24</td>
+<td>29</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E27N31-22</td>
+<td>27</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E28N30-44</td>
+<td>23</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E28N30-42</td>
+<td>19</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E30N31-24</td>
+<td>14</td>
+<td>Mohamed Osman, Mohamed Ashmawy</td>
+</tr>
+<tr>
+<td>E49N26-24</td>
+<td>13</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>E30N31-13</td>
+<td>12</td>
+<td>Mohamed Osman, Mohamed Kenawi</td>
+</tr>
+<tr>
+<td>E30N31-23</td>
+<td>12</td>
+<td>Mohamed Osman, Mohamed Ashmawy</td>
+</tr>
+<tr>
+<td>E27N31-21</td>
+<td>12</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E30N31-14</td>
+<td>11</td>
+<td>Mohamed Osman, Mohamed Kenawi</td>
+</tr>
+<tr>
+<td>E29N31-22</td>
+<td>11</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E08N36-43</td>
+<td>10</td>
+<td>Jen Makovics</td>
+</tr>
+<tr>
+<td>E31N31-13</td>
+<td>10</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E31N31-31</td>
+<td>10</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E51N28-13</td>
+<td>9</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>W02N35-22</td>
+<td>8</td>
+<td>Nick Ray</td>
+</tr>
+<tr>
+<td>E27N31-12</td>
+<td>7</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E51N27-43</td>
+<td>6</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E51N28-14</td>
+<td>6</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E31N31-42</td>
+<td>6</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E51N28-32</td>
+<td>5</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E30N31-42</td>
+<td>5</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>W10N29-23</td>
+<td>4</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E31N31-23</td>
+<td>4</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E30N31-12</td>
+<td>4</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E31N31-11</td>
+<td>4</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>W10N29-42</td>
+<td>4</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E31N31-14</td>
+<td>4</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E30N31-21</td>
+<td>3</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E08N36-34</td>
+<td>3</td>
+<td>Jen Makovics</td>
+</tr>
+<tr>
+<td>E32N31-13</td>
+<td>3</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E51N27-44</td>
+<td>3</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E28N31-21</td>
+<td>3</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E13N25-44</td>
+<td>3</td>
+<td>Julia Nikolaus, Nichole Sheldrick</td>
+</tr>
+<tr>
+<td>E51N28-31</td>
+<td>2</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>W00N35-34</td>
+<td>2</td>
+<td>Nick Ray</td>
+</tr>
+<tr>
+<td>E17N31-12</td>
+<td>2</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E17N30-44</td>
+<td>2</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E50N26-31</td>
+<td>2</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>E28N30-41</td>
+<td>2</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E15N32-12</td>
+<td>2</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E15N32-14</td>
+<td>2</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E51N28-12</td>
+<td>2</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E27N31-13</td>
+<td>2</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E05N36-32</td>
+<td>2</td>
+<td>Jen Makovics</td>
+</tr>
+<tr>
+<td>E16N31-11</td>
+<td>2</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E58N20-32</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>E17N31-11</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E15N31-23</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E32N31-12</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E30N31-11</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E52N27-32</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E54N17-22</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>E59N21-34</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>E29N30-33</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>W16N23-42</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E23N32-31</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E29N30-31</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E15N31-24</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>W00N35-33</td>
+<td>1</td>
+<td>Nick Ray</td>
+</tr>
+<tr>
+<td>E02N36-32</td>
+<td>1</td>
+<td>Jen Makovics</td>
+</tr>
+<tr>
+<td>E51N27-34</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E30N31-22</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E31N28-13</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E15N31-32</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E35N33-14</td>
+<td>1</td>
+<td>Crystal Safadi, Kristen Hopper</td>
+</tr>
+<tr>
+<td>E58N23-22</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>E27N31-14</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E15N31-41</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E56N18-23</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>E32N30-43</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E17N31-21</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E49N26-42</td>
+<td>1</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>E30N31-41</td>
+<td>1</td>
+<td>Mohamed Ashmawy, Mohamed Osman</td>
+</tr>
+<tr>
+<td>E31N31-24</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E32N31-21</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E54N17-21</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>E55N17-31</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>E17N30-43</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E15N31-34</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E31N31-32</td>
+<td>1</td>
+<td>Mohamed Osman</td>
+</tr>
+<tr>
+<td>E53N16-41</td>
+<td>1</td>
+<td>Georgia Andreou</td>
+</tr>
+<tr>
+<td>W01N35-14</td>
+<td>1</td>
+<td>Nick Ray</td>
+</tr>
+<tr>
+<td>E16N31-13</td>
+<td>1</td>
+<td>Julia Nikolaus</td>
+</tr>
+<tr>
+<td>E34N31-32</td>
+<td>1</td>
+<td>Mohammad Jaradat, Georgia Andreou, Michael Fradley</td>
+</tr>
+<tr>
+<td>TOTAL</td>
+<td>1032</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="threat-analysis" tabindex="-1"><a class="observablehq-header-anchor" href="#threat-analysis">Threat Analysis</a></h2>
+<h3 id="egypt" tabindex="-1"><a class="observablehq-header-anchor" href="#egypt">Egypt</a></h3>
+<p>Julia Nikolaus, Mohamed Osman, Mohamed Kenawi, Mohamed Ashmawy</p>
+<h4 id="threats" tabindex="-1"><a class="observablehq-header-anchor" href="#threats">Threats</a></h4>
+<div id="cell-6a3d9aba" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="saudi-arabia" tabindex="-1"><a class="observablehq-header-anchor" href="#saudi-arabia">Saudi Arabia</a></h3>
+<p>Rodrigo Ortiz-Vazquez</p>
+<h4 id="threats-1" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-1">Threats</a></h4>
+<div id="cell-0eef0dce" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="morocco" tabindex="-1"><a class="observablehq-header-anchor" href="#morocco">Morocco</a></h3>
+<p>Nick Ray, Julia Nikolaus</p>
+<h4 id="threats-2" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-2">Threats</a></h4>
+<div id="cell-2042ddb5" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="algeria" tabindex="-1"><a class="observablehq-header-anchor" href="#algeria">Algeria</a></h3>
+<p>Jen Makovics, Nick Ray</p>
+<h4 id="threats-3" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-3">Threats</a></h4>
+<div id="cell-5af82dbb" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="iran-(islamic-republic-of)" tabindex="-1"><a class="observablehq-header-anchor" href="#iran-(islamic-republic-of)">Iran (Islamic Republic of)</a></h3>
+<p>Mohamed Osman</p>
+<h4 id="threats-4" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-4">Threats</a></h4>
+<div id="cell-2042ddb5-1" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="libya" tabindex="-1"><a class="observablehq-header-anchor" href="#libya">Libya</a></h3>
+<p>Julia Nikolaus, Nichole Sheldrick</p>
+<h4 id="threats-5" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-5">Threats</a></h4>
+<div id="cell-9d57f6a5" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="palestine%2C-state-of" tabindex="-1"><a class="observablehq-header-anchor" href="#palestine%2C-state-of">Palestine, State of</a></h3>
+<p>Mohammad Jaradat, Georgia Andreou, Michael Fradley</p>
+<h4 id="threats-6" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-6">Threats</a></h4>
+<div id="cell-6131a5be" class="observablehq observablehq--block observablehq--loading"></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-06-16T09:34:16">Jun 16, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-06-16T11:50:45">Jun 16, 2025</a>.</div>
 </footer>
 </div>
