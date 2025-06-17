@@ -16,7 +16,7 @@
 
 import {define} from "./_observablehq/client.js";
 
-define({id: "6a3d9aba", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "c61268a8", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`gantt  todayMarker off
   dateFormat X
@@ -29,30 +29,53 @@ await mermaid`gantt  todayMarker off
   Clearance (Bulldozing/Levelling) (1) : 0, 1
   Ploughing (1) : 0, 1
   Aquaculture (1) : 0, 1
-  Road/Track (1) : 0, 1
-  Excavation (Hand) (1) : 0, 1
   Clearance (Unclassified) (1) : 0, 1
+  Road/Track (1) : 0, 1
   Coastal Erosion/Retreat (1) : 0, 1`
 ))
 }});
 
-define({id: "0eef0dce", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "c7a4ca22", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`gantt  todayMarker off
   dateFormat X
   axisFormat %
 
+  Construction (1) : 0, 1
+  Road/Track (1) : 0, 1
   Coastal Advance/Accretion (1) : 0, 1
   Vegetation/Crops/Trees (1) : 0, 1
   Water and/or Wind Action (1) : 0, 1
   Dredging (1) : 0, 1
   Wind Action (1) : 0, 1
-  Construction (1) : 0, 1
   Clearance (Bulldozing/Levelling) (1) : 0, 1
-  Road/Track (1) : 0, 1
-  Cable/Pipe Laying (1) : 0, 1
   Water Action (1) : 0, 1
-  Demolition/Destruction (1) : 0, 1`
+  Demolition/Destruction (1) : 0, 1
+  Pollution (1) : 0, 1
+  Excavation (Unclassified) (1) : 0, 1`
+))
+}});
+
+define({id: "84200067", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Construction (1) : 0, 1
+  Water and/or Wind Action (1) : 0, 1`
+))
+}});
+
+define({id: "e3bffc61", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Water and/or Wind Action (1) : 0, 1
+  Land/Rock Slide (1) : 0, 1
+  Water Action (1) : 0, 1`
 ))
 }});
 
@@ -66,44 +89,31 @@ await mermaid`gantt  todayMarker off
 ))
 }});
 
-define({id: "5af82dbb", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "e4bde2fb", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`gantt  todayMarker off
   dateFormat X
   axisFormat %
 
-  Water and/or Wind Action (1) : 0, 1
-  Land/Rock Slide (1) : 0, 1
-  Water Action (1) : 0, 1
-  Human Movement/Trampling (1) : 0, 1`
-))
-}});
-
-define({id: "2042ddb5-1", inputs: ["mermaid","display"], body: async (mermaid,display) => {
-display(await(
-await mermaid`gantt  todayMarker off
-  dateFormat X
-  axisFormat %
-
-  Water and/or Wind Action (1) : 0, 1`
-))
-}});
-
-define({id: "9d57f6a5", inputs: ["mermaid","display"], body: async (mermaid,display) => {
-display(await(
-await mermaid`gantt  todayMarker off
-  dateFormat X
-  axisFormat %
-
-  Breaking/Smashing (1) : 0, 1
   Water and/or Wind Action (1) : 0, 1
   Occupation/Continued Use (1) : 0, 1
   Construction (1) : 0, 1
-  Clearance (Bulldozing/Levelling) (1) : 0, 1`
+  Clearance (Bulldozing/Levelling) (1) : 0, 1
+  Ploughing (1) : 0, 1`
 ))
 }});
 
 define({id: "6131a5be", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`gantt  todayMarker off
+  dateFormat X
+  axisFormat %
+
+  Clearance (Bulldozing/Levelling) (1) : 0, 1`
+))
+}});
+
+define({id: "6131a5be-1", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`gantt  todayMarker off
   dateFormat X
@@ -133,10 +143,10 @@ await mermaid`gantt  todayMarker off
 </div>
 <h2 id="site-documentation" tabindex="-1"><a class="observablehq-header-anchor" href="#site-documentation">Site Documentation</a></h2>
 <div class="grid grid-cols-4">
-<div class="card"><p>MarEA Sites</p><h2>1036</h2></div>
-<div class="card"><p>MarEA Grids</p><h2>96</h2></div>
-<div class="card"><p>Total MarEA Sites</p><h2>22240</h2></div>
-<div class="card"><p>Total MarEA Grids</p><h2>746</h2></div>
+<div class="card"><p>MarEA Sites</p><h2>1464</h2></div>
+<div class="card"><p>MarEA Grids</p><h2>97</h2></div>
+<div class="card"><p>Total MarEA Sites</p><h2>22720</h2></div>
+<div class="card"><p>Total MarEA Grids</p><h2>747</h2></div>
 </div>
 <table>
 <thead>
@@ -148,8 +158,18 @@ await mermaid`gantt  todayMarker off
 </thead>
 <tbody>
 <tr>
+<td>E50N26-31</td>
+<td>297</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
 <td>E50N26-13</td>
-<td>170</td>
+<td>171</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
+<td>E49N26-42</td>
+<td>123</td>
 <td>Rodrigo Ortiz-Vazquez</td>
 </tr>
 <tr>
@@ -273,6 +293,11 @@ await mermaid`gantt  todayMarker off
 <td>Mohamed Osman</td>
 </tr>
 <tr>
+<td>E50N26-33</td>
+<td>10</td>
+<td>Rodrigo Ortiz-Vazquez</td>
+</tr>
+<tr>
 <td>E51N28-13</td>
 <td>9</td>
 <td>Mohamed Osman</td>
@@ -391,11 +416,6 @@ await mermaid`gantt  todayMarker off
 <td>E17N30-44</td>
 <td>2</td>
 <td>Julia Nikolaus</td>
-</tr>
-<tr>
-<td>E50N26-31</td>
-<td>2</td>
-<td>Rodrigo Ortiz-Vazquez</td>
 </tr>
 <tr>
 <td>E28N30-41</td>
@@ -563,11 +583,6 @@ await mermaid`gantt  todayMarker off
 <td>Julia Nikolaus</td>
 </tr>
 <tr>
-<td>E49N26-42</td>
-<td>1</td>
-<td>Rodrigo Ortiz-Vazquez</td>
-</tr>
-<tr>
 <td>E30N31-41</td>
 <td>1</td>
 <td>Mohamed Ashmawy, Mohamed Osman</td>
@@ -629,7 +644,7 @@ await mermaid`gantt  todayMarker off
 </tr>
 <tr>
 <td>TOTAL</td>
-<td>1032</td>
+<td>1460</td>
 <td></td>
 </tr>
 </tbody>
@@ -638,33 +653,37 @@ await mermaid`gantt  todayMarker off
 <h3 id="egypt" tabindex="-1"><a class="observablehq-header-anchor" href="#egypt">Egypt</a></h3>
 <p>Julia Nikolaus, Mohamed Osman, Mohamed Kenawi, Mohamed Ashmawy</p>
 <h4 id="threats" tabindex="-1"><a class="observablehq-header-anchor" href="#threats">Threats</a></h4>
-<div id="cell-6a3d9aba" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-c61268a8" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="saudi-arabia" tabindex="-1"><a class="observablehq-header-anchor" href="#saudi-arabia">Saudi Arabia</a></h3>
 <p>Rodrigo Ortiz-Vazquez</p>
 <h4 id="threats-1" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-1">Threats</a></h4>
-<div id="cell-0eef0dce" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-c7a4ca22" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="morocco" tabindex="-1"><a class="observablehq-header-anchor" href="#morocco">Morocco</a></h3>
 <p>Nick Ray, Julia Nikolaus</p>
 <h4 id="threats-2" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-2">Threats</a></h4>
-<div id="cell-2042ddb5" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-84200067" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="algeria" tabindex="-1"><a class="observablehq-header-anchor" href="#algeria">Algeria</a></h3>
 <p>Jen Makovics, Nick Ray</p>
 <h4 id="threats-3" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-3">Threats</a></h4>
-<div id="cell-5af82dbb" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-e3bffc61" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="iran-(islamic-republic-of)" tabindex="-1"><a class="observablehq-header-anchor" href="#iran-(islamic-republic-of)">Iran (Islamic Republic of)</a></h3>
 <p>Mohamed Osman</p>
 <h4 id="threats-4" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-4">Threats</a></h4>
-<div id="cell-2042ddb5-1" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-2042ddb5" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="libya" tabindex="-1"><a class="observablehq-header-anchor" href="#libya">Libya</a></h3>
 <p>Julia Nikolaus, Nichole Sheldrick</p>
 <h4 id="threats-5" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-5">Threats</a></h4>
-<div id="cell-9d57f6a5" class="observablehq observablehq--block observablehq--loading"></div>
-<h3 id="palestine%2C-state-of" tabindex="-1"><a class="observablehq-header-anchor" href="#palestine%2C-state-of">Palestine, State of</a></h3>
-<p>Mohammad Jaradat, Georgia Andreou, Michael Fradley</p>
+<div id="cell-e4bde2fb" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="lebanon" tabindex="-1"><a class="observablehq-header-anchor" href="#lebanon">Lebanon</a></h3>
+<p>Crystal Safadi, Kristen Hopper</p>
 <h4 id="threats-6" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-6">Threats</a></h4>
 <div id="cell-6131a5be" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="palestine%2C-state-of" tabindex="-1"><a class="observablehq-header-anchor" href="#palestine%2C-state-of">Palestine, State of</a></h3>
+<p>Mohammad Jaradat, Georgia Andreou, Michael Fradley</p>
+<h4 id="threats-7" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-7">Threats</a></h4>
+<div id="cell-6131a5be-1" class="observablehq observablehq--block observablehq--loading"></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-06-16T11:50:45">Jun 16, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-06-17T09:34:34">Jun 17, 2025</a>.</div>
 </footer>
 </div>
