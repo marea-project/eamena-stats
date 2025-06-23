@@ -35,7 +35,7 @@ const grid_sel = view(Inputs.table(site_doc_data, {
 return {site_doc_data,grid_sel};
 }});
 
-define({id: "a18d70d2", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "7a9d841a", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`---
 config:
@@ -45,14 +45,14 @@ config:
     showDataLabel: true
 ---
 xychart-beta
-  x-axis ["Occupation/Continued Use", "Vegetation/Crops/Trees", "Water and/or Wind Action", "Construction", "Clearance (Bulldozing/Levelling)", "Ploughing", "Road/Track", "Aquaculture", "Clearance (Unclassified)", "Coastal Erosion/Retreat"]
+  x-axis ["Occupation/Continued Use", "Vegetation/Crops/Trees", "Clearance (Bulldozing/Levelling)", "Water and/or Wind Action", "Construction", "Ploughing", "Aquaculture", "Road/Track", "Excavation (Hand)", "Clearance (Unclassified)"]
   y-axis "Number identified"
-  bar [48, 2, 16, 21, 14, 18, 5, 2, 2, 1]
+  bar [46, 2, 17, 19, 18, 17, 2, 4, 1, 2]
 `
 ))
 }});
 
-define({id: "d48a109e", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "cf770585", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`---
 config:
@@ -62,14 +62,14 @@ config:
     showDataLabel: true
 ---
 xychart-beta
-  x-axis ["Construction", "Road/Track", "Coastal Advance/Accretion", "Vegetation/Crops/Trees", "Water and/or Wind Action", "Dredging", "Wind Action", "Clearance (Bulldozing/Levelling)", "Water Action", "Demolition/Destruction", "Pollution"]
+  x-axis ["Construction", "Road/Track", "Coastal Advance/Accretion", "Vegetation/Crops/Trees", "Water and/or Wind Action", "Dredging", "Wind Action", "Clearance (Bulldozing/Levelling)", "Cable/Pipe Laying", "Water Action", "Demolition/Destruction", "Pollution"]
   y-axis "Number identified"
-  bar [90, 17, 27, 6, 61, 27, 4, 2, 13, 4, 1]
+  bar [96, 17, 24, 6, 66, 28, 4, 3, 1, 13, 5, 1]
 `
 ))
 }});
 
-define({id: "4c1eb2fd", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "88ad5ced", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`---
 config:
@@ -79,14 +79,14 @@ config:
     showDataLabel: true
 ---
 xychart-beta
-  x-axis ["Construction", "Water and/or Wind Action"]
+  x-axis ["Water and/or Wind Action"]
   y-axis "Number identified"
-  bar [1, 3]
+  bar [2]
 `
 ))
 }});
 
-define({id: "3e2495cf", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "97e25924", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`---
 config:
@@ -98,7 +98,7 @@ config:
 xychart-beta
   x-axis ["Water and/or Wind Action", "Land/Rock Slide", "Water Action"]
   y-axis "Number identified"
-  bar [5, 1, 1]
+  bar [6, 1, 1]
 `
 ))
 }});
@@ -120,7 +120,7 @@ xychart-beta
 ))
 }});
 
-define({id: "68d43506", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+define({id: "c3fb8305", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`---
 config:
@@ -130,14 +130,31 @@ config:
     showDataLabel: true
 ---
 xychart-beta
-  x-axis ["Water and/or Wind Action", "Construction", "Occupation/Continued Use", "Clearance (Bulldozing/Levelling)"]
+  x-axis ["Water and/or Wind Action", "Occupation/Continued Use", "Construction", "Clearance (Bulldozing/Levelling)"]
   y-axis "Number identified"
-  bar [18, 1, 2, 2]
+  bar [17, 4, 1, 2]
 `
 ))
 }});
 
 define({id: "5a34e4e6", inputs: ["mermaid","display"], body: async (mermaid,display) => {
+display(await(
+await mermaid`---
+config:
+  theme: dark
+  xyChart:
+    plotReservedSpacePercent: 90
+    showDataLabel: true
+---
+xychart-beta
+  x-axis ["Clearance (Bulldozing/Levelling)"]
+  y-axis "Number identified"
+  bar [1]
+`
+))
+}});
+
+define({id: "5a34e4e6-1", inputs: ["mermaid","display"], body: async (mermaid,display) => {
 display(await(
 await mermaid`---
 config:
@@ -184,19 +201,19 @@ xychart-beta
 <h3 id="egypt" tabindex="-1"><a class="observablehq-header-anchor" href="#egypt">Egypt</a></h3>
 <p>Based on reports of 511 sites by Julia Nikolaus, Mohamed Osman, Mohamed Kenawi, Mohamed Ashmawy</p>
 <h4 id="threats" tabindex="-1"><a class="observablehq-header-anchor" href="#threats">Threats</a></h4>
-<div id="cell-a18d70d2" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-7a9d841a" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="saudi-arabia" tabindex="-1"><a class="observablehq-header-anchor" href="#saudi-arabia">Saudi Arabia</a></h3>
 <p>Based on reports of 770 sites by Rodrigo Ortiz-Vazquez</p>
 <h4 id="threats-1" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-1">Threats</a></h4>
-<div id="cell-d48a109e" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-cf770585" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="morocco" tabindex="-1"><a class="observablehq-header-anchor" href="#morocco">Morocco</a></h3>
 <p>Based on reports of 39 sites by Nick Ray, Julia Nikolaus</p>
 <h4 id="threats-2" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-2">Threats</a></h4>
-<div id="cell-4c1eb2fd" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-88ad5ced" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="algeria" tabindex="-1"><a class="observablehq-header-anchor" href="#algeria">Algeria</a></h3>
 <p>Based on reports of 25 sites by Jen Makovics, Nick Ray</p>
 <h4 id="threats-3" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-3">Threats</a></h4>
-<div id="cell-3e2495cf" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-97e25924" class="observablehq observablehq--block observablehq--loading"></div>
 <h3 id="iran-(islamic-republic-of)" tabindex="-1"><a class="observablehq-header-anchor" href="#iran-(islamic-republic-of)">Iran (Islamic Republic of)</a></h3>
 <p>Based on reports of 35 sites by Mohamed Osman</p>
 <h4 id="threats-4" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-4">Threats</a></h4>
@@ -204,13 +221,17 @@ xychart-beta
 <h3 id="libya" tabindex="-1"><a class="observablehq-header-anchor" href="#libya">Libya</a></h3>
 <p>Based on reports of 95 sites by Julia Nikolaus, Nichole Sheldrick</p>
 <h4 id="threats-5" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-5">Threats</a></h4>
-<div id="cell-68d43506" class="observablehq observablehq--block observablehq--loading"></div>
-<h3 id="palestine%2C-state-of" tabindex="-1"><a class="observablehq-header-anchor" href="#palestine%2C-state-of">Palestine, State of</a></h3>
-<p>Based on reports of 1 sites by Mohammad Jaradat, Georgia Andreou, Michael Fradley</p>
+<div id="cell-c3fb8305" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="lebanon" tabindex="-1"><a class="observablehq-header-anchor" href="#lebanon">Lebanon</a></h3>
+<p>Based on reports of 1 sites by Crystal Safadi, Kristen Hopper</p>
 <h4 id="threats-6" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-6">Threats</a></h4>
 <div id="cell-5a34e4e6" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="palestine%2C-state-of" tabindex="-1"><a class="observablehq-header-anchor" href="#palestine%2C-state-of">Palestine, State of</a></h3>
+<p>Based on reports of 1 sites by Mohammad Jaradat, Georgia Andreou, Michael Fradley</p>
+<h4 id="threats-7" tabindex="-1"><a class="observablehq-header-anchor" href="#threats-7">Threats</a></h4>
+<div id="cell-5a34e4e6-1" class="observablehq observablehq--block observablehq--loading"></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-06-22T09:34:34">Jun 22, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-06-23T09:34:29">Jun 23, 2025</a>.</div>
 </footer>
 </div>
