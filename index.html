@@ -58,8 +58,8 @@ import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
 registerFile("./data/combine.json", {"name":"./data/combine.json","mimeType":"application/json","path":"./_file/data/combine.45c0e1be.json","lastModified":1734104752015});
-registerFile("./data/countries.json", {"name":"./data/countries.json","mimeType":"application/json","path":"./_file/data/countries.027fc2f5.json","lastModified":1760344710321});
-registerFile("./data/grid_data.json", {"name":"./data/grid_data.json","mimeType":"application/json","path":"./_file/data/grid_data.8fd6b041.json","lastModified":1760344718013});
+registerFile("./data/countries.json", {"name":"./data/countries.json","mimeType":"application/json","path":"./_file/data/countries.027fc2f5.json","lastModified":1761034828015});
+registerFile("./data/grid_data_trimmed.json", {"name":"./data/grid_data_trimmed.json","mimeType":"application/json","path":"./_file/data/grid_data_trimmed.02ab53dd.json","lastModified":1761035684563});
 registerFile("./data/years.json", {"name":"./data/years.json","mimeType":"application/json","path":"./_file/data/years.7703e381.json","lastModified":1734104751583});
 
 define({id: "fdcc03e8", inline: true, inputs: ["resize","Plot","roles","display"], body: async (resize,Plot,roles,display) => {
@@ -101,11 +101,11 @@ display(await(
 ))
 }});
 
-define({id: "cbd8ea79", inputs: ["FileAttachment","view","Inputs"], outputs: ["years","roles","countries","grid_data","role_sel","year_sel"], body: async (FileAttachment,view,Inputs) => {
+define({id: "57ed234a", inputs: ["FileAttachment","view","Inputs"], outputs: ["years","roles","countries","grid_data","role_sel","year_sel"], body: async (FileAttachment,view,Inputs) => {
 const years = await FileAttachment("./data/years.json").json();
 const roles = await FileAttachment("./data/combine.json").json();
 const countries = await FileAttachment("./data/countries.json").json();
-const grid_data = FileAttachment("./data/grid_data.json").json();
+const grid_data = FileAttachment("./data/grid_data_trimmed.json").json();
 const role_sel = view(
 	Inputs.select(roles, {
 		label: "Role",
@@ -334,7 +334,7 @@ return {site_sel};
   <h2>Statistics on the data quality and completeness of the EAMENA database.</h2>
 </div>
   <div class="card"><span id="cell-fdcc03e8" class="observablehq--loading"></span></div>
-<div id="cell-cbd8ea79" class="observablehq observablehq--block"></div>
+<div id="cell-57ed234a" class="observablehq observablehq--block"></div>
 <div class="grid grid-cols-4">
   <div class="card">
 	<p> Total sites </p>
@@ -364,6 +364,6 @@ return {site_sel};
 </div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-13T09:34:35">Oct 13, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-21T09:34:52">Oct 21, 2025</a>.</div>
 </footer>
 </div>
