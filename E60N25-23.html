@@ -57,9 +57,9 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/grids/E60N25-23.json", {"name":"./data/grids/E60N25-23.json","mimeType":"application/json","path":"./_file/data/grids/E60N25-23.5402463d.json","lastModified":1761035588835});
+registerFile("./data/grids/E60N25-23.json", {"name":"./data/grids/E60N25-23.json","mimeType":"application/json","path":"./_file/data/grids/E60N25-23.d60c14b8.json","lastModified":1761121994748});
 
-define({id: "38c246ce", inputs: ["FileAttachment","view","Inputs","htl"], outputs: ["grid_data","summarise_tiles","summarise_damage","role_expand","site_sel"], body: async (FileAttachment,view,Inputs,htl) => {
+define({id: "546a6db0", inputs: ["FileAttachment","view","Inputs","htl"], outputs: ["grid_data","summarise_tiles","summarise_damage","role_expand","site_sel"], body: async (FileAttachment,view,Inputs,htl) => {
 const grid_data = await FileAttachment("./data/grids/E60N25-23.json").json();
 
 function summarise_tiles(item)
@@ -126,12 +126,13 @@ function role_expand(role)
 }
 
 const site_sel = view(Inputs.table(grid_data['sites'], {
-        columns: ['Label', 'Role', 'Date', 'Tiles', 'ID'],
-        header: {'Label': 'EAMENA ID', 'Date': 'Assessment Date(s)', 'Tiles': 'Assessments', 'ID': ''},
+        columns: ['Label', 'Role', 'Date', 'MissingFields', 'Tiles', 'ID'],
+        header: {'Label': 'EAMENA ID', 'Date': 'Assessment Date(s)', 'Tiles': 'Assessments', 'ID': '', 'MissingFields': 'Missing'},
         format: {
                 'ID': (x) => htl.html`<a href="https://database.eamena.org/report/${ x }">EAMENA Link</a>`,
                 'Role': (x) => htl.html`${ role_expand(x) }`,
 		'Tiles': (x) => htl.html`${ x.length }`,
+		'MissingFields': (x) => htl.html`${ x.length }`,
         },
   }));
 
@@ -218,13 +219,13 @@ display(await(
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <h1 id="e60n25-23" tabindex="-1"><a class="observablehq-header-anchor" href="#e60n25-23">E60N25-23</a></h1>
-<div id="cell-38c246ce" class="observablehq observablehq--block"></div>
+<div id="cell-546a6db0" class="observablehq observablehq--block"></div>
   <h2>Grid Completeness</h2>
   <div class="card"><span id="cell-bacb24d4" class="observablehq--loading"></span></div>
   <h2>Disturbance Causes</h2>
   <div class="card"><span id="cell-47db1845" class="observablehq--loading"></span></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-21T09:34:52">Oct 21, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-22T09:35:01">Oct 22, 2025</a>.</div>
 </footer>
 </div>
