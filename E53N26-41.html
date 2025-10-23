@@ -57,9 +57,9 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/grids/E53N26-41.json", {"name":"./data/grids/E53N26-41.json","mimeType":"application/json","path":"./_file/data/grids/E53N26-41.1d71ae7b.json","lastModified":1761121995708});
+registerFile("./data/grids/E53N26-41.json", {"name":"./data/grids/E53N26-41.json","mimeType":"application/json","path":"./_file/data/grids/E53N26-41.1d71ae7b.json","lastModified":1761208400060});
 
-define({id: "7b89f0f9", inputs: ["FileAttachment","view","Inputs","htl"], outputs: ["grid_data","summarise_tiles","summarise_damage","role_expand","site_sel"], body: async (FileAttachment,view,Inputs,htl) => {
+define({id: "26059f3a", inputs: ["FileAttachment","htl","view","Inputs"], outputs: ["grid_data","summarise_tiles","summarise_damage","role_expand","mds","site_sel"], body: async (FileAttachment,htl,view,Inputs) => {
 const grid_data = await FileAttachment("./data/grids/E53N26-41.json").json();
 
 function summarise_tiles(item)
@@ -125,18 +125,24 @@ function role_expand(role)
 	return role.label;
 }
 
+function mds(value)
+{
+	if(value == 0) { return htl.html`<span style="color: green;">&#10004</span>`; }
+	return htl.html`<span style="color: red;">&#10006</span>`;
+}
+
 const site_sel = view(Inputs.table(grid_data['sites'], {
         columns: ['Label', 'Role', 'Date', 'MissingFields', 'Tiles', 'ID'],
-        header: {'Label': 'EAMENA ID', 'Date': 'Assessment Date(s)', 'Tiles': 'Assessments', 'ID': '', 'MissingFields': 'Missing'},
+        header: {'Label': 'EAMENA ID', 'Date': 'Assessment Date(s)', 'Tiles': 'Assessments', 'ID': '', 'MissingFields': 'MDS'},
         format: {
                 'ID': (x) => htl.html`<a href="https://database.eamena.org/report/${ x }">EAMENA Link</a>`,
                 'Role': (x) => htl.html`${ role_expand(x) }`,
 		'Tiles': (x) => htl.html`${ x.length }`,
-		'MissingFields': (x) => htl.html`${ x.length }`,
+		'MissingFields': (x) => mds(x.length),
         },
   }));
 
-return {grid_data,summarise_tiles,summarise_damage,role_expand,site_sel};
+return {grid_data,summarise_tiles,summarise_damage,role_expand,mds,site_sel};
 }});
 
 define({id: "bacb24d4", inline: true, inputs: ["resize","Plot","summarise_tiles","site_sel","display"], body: async (resize,Plot,summarise_tiles,site_sel,display) => {
@@ -219,13 +225,13 @@ display(await(
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <h1 id="e53n26-41" tabindex="-1"><a class="observablehq-header-anchor" href="#e53n26-41">E53N26-41</a></h1>
-<div id="cell-7b89f0f9" class="observablehq observablehq--block"></div>
+<div id="cell-26059f3a" class="observablehq observablehq--block"></div>
   <h2>Grid Completeness</h2>
   <div class="card"><span id="cell-bacb24d4" class="observablehq--loading"></span></div>
   <h2>Disturbance Causes</h2>
   <div class="card"><span id="cell-47db1845" class="observablehq--loading"></span></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-22T09:35:01">Oct 22, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-23T09:35:05">Oct 23, 2025</a>.</div>
 </footer>
 </div>
