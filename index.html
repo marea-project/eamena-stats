@@ -58,9 +58,9 @@ import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
 registerFile("./data/combine.json", {"name":"./data/combine.json","mimeType":"application/json","path":"./_file/data/combine.45c0e1be.json","lastModified":1734104752015});
-registerFile("./data/countries.json", {"name":"./data/countries.json","mimeType":"application/json","path":"./_file/data/countries.027fc2f5.json","lastModified":1761643225784});
-registerFile("./data/grid_data_trimmed.json", {"name":"./data/grid_data_trimmed.json","mimeType":"application/json","path":"./_file/data/grid_data_trimmed.71cfae8d.json","lastModified":1761644089083});
-registerFile("./data/years.json", {"name":"./data/years.json","mimeType":"application/json","path":"./_file/data/years.7703e381.json","lastModified":1734104751583});
+registerFile("./data/countries.json", {"name":"./data/countries.json","mimeType":"application/json","path":"./_file/data/countries.027fc2f5.json","lastModified":1761729660378});
+registerFile("./data/grid_data_trimmed.json", {"name":"./data/grid_data_trimmed.json","mimeType":"application/json","path":"./_file/data/grid_data_trimmed.e40cc6b9.json","lastModified":1761730484842});
+registerFile("./data/years.json", {"name":"./data/years.json","mimeType":"application/json","path":"./_file/data/years.7703e381.json","lastModified":1761730202665});
 
 define({id: "fdcc03e8", inline: true, inputs: ["resize","Plot","roles","display"], body: async (resize,Plot,roles,display) => {
 display(await(
@@ -266,16 +266,23 @@ const grid_sel = view(Inputs.table(selected_grids(maindata_sel), {
 return {grid_sel};
 }});
 
-define({id: "48efa956", inputs: ["view","Inputs","selected_sites","grid_sel","htl"], outputs: ["site_sel"], body: (view,Inputs,selected_sites,grid_sel,htl) => {
+define({id: "de6c5d57", inputs: ["htl","view","Inputs","selected_sites","grid_sel"], outputs: ["mds","site_sel"], body: (htl,view,Inputs,selected_sites,grid_sel) => {
+function mds(value)
+{
+	if(value == 0) { return htl.html`<span style="color: green;">&#10004</span>`; }
+	return htl.html`<span style="color: red;">&#10006</span>`;
+}
+
 const site_sel = view(Inputs.table(selected_sites(grid_sel), {
-	columns: ['Label', 'Date', 'ID'],
-	header: {'Label': 'EAMENA ID', 'Date': 'Assessment Date(s)', 'ID': ''},
+	columns: ['Label', 'Date', 'MissingFields', 'ID'],
+	header: {'Label': 'EAMENA ID', 'Date': 'Assessment Date(s)', 'MissingFields': 'MDS', 'ID': ''},
 	format: {
 		'ID': (x) => htl.html`<a href="https://database.eamena.org/report/${ x }">EAMENA Link</a>`,
+		'MissingFields': (x) => mds(x.length),
 	},
   }));
 
-return {site_sel};
+return {mds,site_sel};
 }});
 
 </script>
@@ -359,11 +366,11 @@ return {site_sel};
 <div id="cell-c52cc753" class="observablehq observablehq--block"></div>
 </div>
 <div class="card">
-<div id="cell-48efa956" class="observablehq observablehq--block"></div>
+<div id="cell-de6c5d57" class="observablehq observablehq--block"></div>
 </div>
 </div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-28T09:34:57">Oct 28, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-29T09:34:56">Oct 29, 2025</a>.</div>
 </footer>
 </div>
