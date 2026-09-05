@@ -70,7 +70,7 @@ const grid_sel = view(Inputs.table(site_doc_data, {
 return {site_doc_data,grid_sel};
 }});
 
-define({id: "4db8ea2a", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "7722854c", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -80,14 +80,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Coastal Erosion/Retreat", "records": 36}, {"label": "Vegetation/Crops/Trees", "records": 36}, {"label": "Road/Track", "records": 20}, {"label": "Clearance (Unclassified)", "records": 14}, {"label": "Construction", "records": 14}, {"label": "Ploughing", "records": 12}, {"label": "Occupation/Continued Use", "records": 11}, {"label": "Excavation (Unclassified)", "records": 9}, {"label": "Clearance (Bulldozing/Levelling)", "records": 7}, {"label": "Water and/or Wind Action", "records": 6}, {"label": "Flooding", "records": 3}, {"label": "Water Action", "records": 2}, {"label": "Theft/Unauthorised Removal of Objects", "records": 2}, {"label": "Inundation", "records": 1}, {"label": "Mining/Quarrying (Unclassified)", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Conservation", "records": 1}, {"label": "Temperature/Humidity Change", "records": 1}, {"label": "Landscaping", "records": 1}], {
+                Plot.barX([{"label": "Coastal Erosion/Retreat", "records": 40}, {"label": "Vegetation/Crops/Trees", "records": 32}, {"label": "Road/Track", "records": 25}, {"label": "Clearance (Unclassified)", "records": 14}, {"label": "Ploughing", "records": 13}, {"label": "Occupation/Continued Use", "records": 11}, {"label": "Construction", "records": 11}, {"label": "Clearance (Bulldozing/Levelling)", "records": 8}, {"label": "Water and/or Wind Action", "records": 7}, {"label": "Excavation (Unclassified)", "records": 6}, {"label": "Water Action", "records": 4}, {"label": "Landscaping", "records": 2}, {"label": "Flooding", "records": 2}, {"label": "Inundation", "records": 1}, {"label": "Reconstruction", "records": 1}, {"label": "Theft/Unauthorised Removal of Objects", "records": 1}, {"label": "Mining/Quarrying (Unclassified)", "records": 1}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Conservation", "records": 1}, {"label": "Temperature/Humidity Change", "records": 1}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Coastal Erosion/Retreat", "records": 36}, {"label": "Vegetation/Crops/Trees", "records": 36}, {"label": "Road/Track", "records": 20}, {"label": "Clearance (Unclassified)", "records": 14}, {"label": "Construction", "records": 14}, {"label": "Ploughing", "records": 12}, {"label": "Occupation/Continued Use", "records": 11}, {"label": "Excavation (Unclassified)", "records": 9}, {"label": "Clearance (Bulldozing/Levelling)", "records": 7}, {"label": "Water and/or Wind Action", "records": 6}, {"label": "Flooding", "records": 3}, {"label": "Water Action", "records": 2}, {"label": "Theft/Unauthorised Removal of Objects", "records": 2}, {"label": "Inundation", "records": 1}, {"label": "Mining/Quarrying (Unclassified)", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Conservation", "records": 1}, {"label": "Temperature/Humidity Change", "records": 1}, {"label": "Landscaping", "records": 1}], {
+                Plot.text([{"label": "Coastal Erosion/Retreat", "records": 40}, {"label": "Vegetation/Crops/Trees", "records": 32}, {"label": "Road/Track", "records": 25}, {"label": "Clearance (Unclassified)", "records": 14}, {"label": "Ploughing", "records": 13}, {"label": "Occupation/Continued Use", "records": 11}, {"label": "Construction", "records": 11}, {"label": "Clearance (Bulldozing/Levelling)", "records": 8}, {"label": "Water and/or Wind Action", "records": 7}, {"label": "Excavation (Unclassified)", "records": 6}, {"label": "Water Action", "records": 4}, {"label": "Landscaping", "records": 2}, {"label": "Flooding", "records": 2}, {"label": "Inundation", "records": 1}, {"label": "Reconstruction", "records": 1}, {"label": "Theft/Unauthorised Removal of Objects", "records": 1}, {"label": "Mining/Quarrying (Unclassified)", "records": 1}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Conservation", "records": 1}, {"label": "Temperature/Humidity Change", "records": 1}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -95,7 +95,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Coastal Erosion/Retreat", "records": 36}, {"label": "Vegetation/Crops/Trees", "records": 36}, {"label": "Road/Track", "records": 20}, {"label": "Clearance (Unclassified)", "records": 14}, {"label": "Construction", "records": 14}, {"label": "Ploughing", "records": 12}, {"label": "Occupation/Continued Use", "records": 11}, {"label": "Excavation (Unclassified)", "records": 9}, {"label": "Clearance (Bulldozing/Levelling)", "records": 7}, {"label": "Water and/or Wind Action", "records": 6}, {"label": "Flooding", "records": 3}, {"label": "Water Action", "records": 2}, {"label": "Theft/Unauthorised Removal of Objects", "records": 2}, {"label": "Inundation", "records": 1}, {"label": "Mining/Quarrying (Unclassified)", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Conservation", "records": 1}, {"label": "Temperature/Humidity Change", "records": 1}, {"label": "Landscaping", "records": 1}], {
+                Plot.text([{"label": "Coastal Erosion/Retreat", "records": 40}, {"label": "Vegetation/Crops/Trees", "records": 32}, {"label": "Road/Track", "records": 25}, {"label": "Clearance (Unclassified)", "records": 14}, {"label": "Ploughing", "records": 13}, {"label": "Occupation/Continued Use", "records": 11}, {"label": "Construction", "records": 11}, {"label": "Clearance (Bulldozing/Levelling)", "records": 8}, {"label": "Water and/or Wind Action", "records": 7}, {"label": "Excavation (Unclassified)", "records": 6}, {"label": "Water Action", "records": 4}, {"label": "Landscaping", "records": 2}, {"label": "Flooding", "records": 2}, {"label": "Inundation", "records": 1}, {"label": "Reconstruction", "records": 1}, {"label": "Theft/Unauthorised Removal of Objects", "records": 1}, {"label": "Mining/Quarrying (Unclassified)", "records": 1}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Conservation", "records": 1}, {"label": "Temperature/Humidity Change", "records": 1}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -109,7 +109,7 @@ display(await(
 ))
 }});
 
-define({id: "e90b3b6e", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "27a690fd", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -119,14 +119,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Water and/or Wind Action", "records": 25}, {"label": "Road/Track", "records": 7}, {"label": "Wind Action", "records": 7}, {"label": "Maintenance/Management Activities", "records": 4}, {"label": "Construction", "records": 4}, {"label": "Landscaping", "records": 2}, {"label": "Mining/Quarrying (Surface)", "records": 1}, {"label": "Drilling", "records": 1}], {
+                Plot.barX([{"label": "Water and/or Wind Action", "records": 22}, {"label": "Road/Track", "records": 8}, {"label": "Wind Action", "records": 8}, {"label": "Maintenance/Management Activities", "records": 5}, {"label": "Construction", "records": 3}, {"label": "Landscaping", "records": 2}, {"label": "Mining/Quarrying (Surface)", "records": 1}, {"label": "Drilling", "records": 1}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 25}, {"label": "Road/Track", "records": 7}, {"label": "Wind Action", "records": 7}, {"label": "Maintenance/Management Activities", "records": 4}, {"label": "Construction", "records": 4}, {"label": "Landscaping", "records": 2}, {"label": "Mining/Quarrying (Surface)", "records": 1}, {"label": "Drilling", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 22}, {"label": "Road/Track", "records": 8}, {"label": "Wind Action", "records": 8}, {"label": "Maintenance/Management Activities", "records": 5}, {"label": "Construction", "records": 3}, {"label": "Landscaping", "records": 2}, {"label": "Mining/Quarrying (Surface)", "records": 1}, {"label": "Drilling", "records": 1}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -134,7 +134,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 25}, {"label": "Road/Track", "records": 7}, {"label": "Wind Action", "records": 7}, {"label": "Maintenance/Management Activities", "records": 4}, {"label": "Construction", "records": 4}, {"label": "Landscaping", "records": 2}, {"label": "Mining/Quarrying (Surface)", "records": 1}, {"label": "Drilling", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 22}, {"label": "Road/Track", "records": 8}, {"label": "Wind Action", "records": 8}, {"label": "Maintenance/Management Activities", "records": 5}, {"label": "Construction", "records": 3}, {"label": "Landscaping", "records": 2}, {"label": "Mining/Quarrying (Surface)", "records": 1}, {"label": "Drilling", "records": 1}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -148,7 +148,7 @@ display(await(
 ))
 }});
 
-define({id: "1a0a8cdb", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "3eae3675", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -158,14 +158,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Water and/or Wind Action", "records": 59}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Human Movement/Trampling", "records": 4}, {"label": "Occupation/Continued Use", "records": 3}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Road/Track", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Fire", "records": 2}, {"label": "Structural Robbing", "records": 1}, {"label": "Seismic Activity", "records": 1}, {"label": "Coastal Erosion/Retreat", "records": 1}, {"label": "Water Action", "records": 1}, {"label": "Clearance (Unclassified)", "records": 1}, {"label": "Graffiti", "records": 1}, {"label": "Theft/Unauthorised Removal of Objects", "records": 1}, {"label": "Ploughing", "records": 1}], {
+                Plot.barX([{"label": "Water and/or Wind Action", "records": 63}, {"label": "Human Movement/Trampling", "records": 5}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Fire", "records": 4}, {"label": "Occupation/Continued Use", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Coastal Erosion/Retreat", "records": 2}, {"label": "Road/Track", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 2}, {"label": "Structural Robbing", "records": 1}, {"label": "Seismic Activity", "records": 1}, {"label": "Water Action", "records": 1}, {"label": "Clearance (Unclassified)", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Ploughing", "records": 1}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 59}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Human Movement/Trampling", "records": 4}, {"label": "Occupation/Continued Use", "records": 3}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Road/Track", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Fire", "records": 2}, {"label": "Structural Robbing", "records": 1}, {"label": "Seismic Activity", "records": 1}, {"label": "Coastal Erosion/Retreat", "records": 1}, {"label": "Water Action", "records": 1}, {"label": "Clearance (Unclassified)", "records": 1}, {"label": "Graffiti", "records": 1}, {"label": "Theft/Unauthorised Removal of Objects", "records": 1}, {"label": "Ploughing", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 63}, {"label": "Human Movement/Trampling", "records": 5}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Fire", "records": 4}, {"label": "Occupation/Continued Use", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Coastal Erosion/Retreat", "records": 2}, {"label": "Road/Track", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 2}, {"label": "Structural Robbing", "records": 1}, {"label": "Seismic Activity", "records": 1}, {"label": "Water Action", "records": 1}, {"label": "Clearance (Unclassified)", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Ploughing", "records": 1}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -173,7 +173,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 59}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Human Movement/Trampling", "records": 4}, {"label": "Occupation/Continued Use", "records": 3}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Road/Track", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Fire", "records": 2}, {"label": "Structural Robbing", "records": 1}, {"label": "Seismic Activity", "records": 1}, {"label": "Coastal Erosion/Retreat", "records": 1}, {"label": "Water Action", "records": 1}, {"label": "Clearance (Unclassified)", "records": 1}, {"label": "Graffiti", "records": 1}, {"label": "Theft/Unauthorised Removal of Objects", "records": 1}, {"label": "Ploughing", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 63}, {"label": "Human Movement/Trampling", "records": 5}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Fire", "records": 4}, {"label": "Occupation/Continued Use", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Coastal Erosion/Retreat", "records": 2}, {"label": "Road/Track", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Lack of Maintenance/Management/Legal Measures and Activities", "records": 2}, {"label": "Structural Robbing", "records": 1}, {"label": "Seismic Activity", "records": 1}, {"label": "Water Action", "records": 1}, {"label": "Clearance (Unclassified)", "records": 1}, {"label": "Excavation (Bulldozing/Machinery)", "records": 1}, {"label": "Ploughing", "records": 1}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -187,7 +187,7 @@ display(await(
 ))
 }});
 
-define({id: "e5cd8f46", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "296ffed8", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -197,14 +197,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Water and/or Wind Action", "records": 44}, {"label": "Road/Track", "records": 15}, {"label": "Construction", "records": 10}, {"label": "Water Action", "records": 6}, {"label": "Dumping", "records": 3}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Explosion/Heavy Weaponry", "records": 2}, {"label": "Dredging", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}, {"label": "Reconstruction", "records": 1}], {
+                Plot.barX([{"label": "Water and/or Wind Action", "records": 46}, {"label": "Road/Track", "records": 14}, {"label": "Construction", "records": 13}, {"label": "Water Action", "records": 6}, {"label": "Dumping", "records": 3}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Explosion/Heavy Weaponry", "records": 2}, {"label": "Dredging", "records": 1}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 44}, {"label": "Road/Track", "records": 15}, {"label": "Construction", "records": 10}, {"label": "Water Action", "records": 6}, {"label": "Dumping", "records": 3}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Explosion/Heavy Weaponry", "records": 2}, {"label": "Dredging", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}, {"label": "Reconstruction", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 46}, {"label": "Road/Track", "records": 14}, {"label": "Construction", "records": 13}, {"label": "Water Action", "records": 6}, {"label": "Dumping", "records": 3}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Explosion/Heavy Weaponry", "records": 2}, {"label": "Dredging", "records": 1}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -212,7 +212,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 44}, {"label": "Road/Track", "records": 15}, {"label": "Construction", "records": 10}, {"label": "Water Action", "records": 6}, {"label": "Dumping", "records": 3}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Explosion/Heavy Weaponry", "records": 2}, {"label": "Dredging", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}, {"label": "Reconstruction", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 46}, {"label": "Road/Track", "records": 14}, {"label": "Construction", "records": 13}, {"label": "Water Action", "records": 6}, {"label": "Dumping", "records": 3}, {"label": "Excavation (Unclassified)", "records": 2}, {"label": "Explosion/Heavy Weaponry", "records": 2}, {"label": "Dredging", "records": 1}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -226,7 +226,7 @@ display(await(
 ))
 }});
 
-define({id: "136749f6", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "8ccee9ba", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -236,14 +236,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Occupation/Continued Use", "records": 14}, {"label": "Water and/or Wind Action", "records": 11}, {"label": "Clearance (Bulldozing/Levelling)", "records": 8}, {"label": "Water Action", "records": 8}, {"label": "Road/Track", "records": 7}, {"label": "Ploughing", "records": 4}, {"label": "Vegetation/Crops/Trees", "records": 3}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Dumping", "records": 1}], {
+                Plot.barX([{"label": "Occupation/Continued Use", "records": 15}, {"label": "Water and/or Wind Action", "records": 9}, {"label": "Water Action", "records": 8}, {"label": "Clearance (Bulldozing/Levelling)", "records": 7}, {"label": "Road/Track", "records": 5}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Ploughing", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Dumping", "records": 1}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Occupation/Continued Use", "records": 14}, {"label": "Water and/or Wind Action", "records": 11}, {"label": "Clearance (Bulldozing/Levelling)", "records": 8}, {"label": "Water Action", "records": 8}, {"label": "Road/Track", "records": 7}, {"label": "Ploughing", "records": 4}, {"label": "Vegetation/Crops/Trees", "records": 3}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Dumping", "records": 1}], {
+                Plot.text([{"label": "Occupation/Continued Use", "records": 15}, {"label": "Water and/or Wind Action", "records": 9}, {"label": "Water Action", "records": 8}, {"label": "Clearance (Bulldozing/Levelling)", "records": 7}, {"label": "Road/Track", "records": 5}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Ploughing", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Dumping", "records": 1}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -251,7 +251,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Occupation/Continued Use", "records": 14}, {"label": "Water and/or Wind Action", "records": 11}, {"label": "Clearance (Bulldozing/Levelling)", "records": 8}, {"label": "Water Action", "records": 8}, {"label": "Road/Track", "records": 7}, {"label": "Ploughing", "records": 4}, {"label": "Vegetation/Crops/Trees", "records": 3}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Demolition/Destruction", "records": 1}, {"label": "Dumping", "records": 1}], {
+                Plot.text([{"label": "Occupation/Continued Use", "records": 15}, {"label": "Water and/or Wind Action", "records": 9}, {"label": "Water Action", "records": 8}, {"label": "Clearance (Bulldozing/Levelling)", "records": 7}, {"label": "Road/Track", "records": 5}, {"label": "Vegetation/Crops/Trees", "records": 5}, {"label": "Ploughing", "records": 3}, {"label": "Demolition/Destruction", "records": 2}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Construction", "records": 2}, {"label": "Dumping", "records": 1}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -265,7 +265,7 @@ display(await(
 ))
 }});
 
-define({id: "806c5fe6", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "2c3fa307", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -275,14 +275,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Coastal Erosion/Retreat", "records": 4}, {"label": "Clearance (Bulldozing/Levelling)", "records": 3}, {"label": "Vegetation/Crops/Trees", "records": 2}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Excavation (Hand)", "records": 1}, {"label": "Water and/or Wind Action", "records": 1}, {"label": "Aquaculture", "records": 1}, {"label": "Excavation (Unclassified)", "records": 1}], {
+                Plot.barX([{"label": "Clearance (Unclassified)", "records": 5}, {"label": "Coastal Erosion/Retreat", "records": 4}, {"label": "Clearance (Bulldozing/Levelling)", "records": 3}, {"label": "Vegetation/Crops/Trees", "records": 2}, {"label": "Excavation (Hand)", "records": 1}, {"label": "Water and/or Wind Action", "records": 1}, {"label": "Aquaculture", "records": 1}, {"label": "Excavation (Unclassified)", "records": 1}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Coastal Erosion/Retreat", "records": 4}, {"label": "Clearance (Bulldozing/Levelling)", "records": 3}, {"label": "Vegetation/Crops/Trees", "records": 2}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Excavation (Hand)", "records": 1}, {"label": "Water and/or Wind Action", "records": 1}, {"label": "Aquaculture", "records": 1}, {"label": "Excavation (Unclassified)", "records": 1}], {
+                Plot.text([{"label": "Clearance (Unclassified)", "records": 5}, {"label": "Coastal Erosion/Retreat", "records": 4}, {"label": "Clearance (Bulldozing/Levelling)", "records": 3}, {"label": "Vegetation/Crops/Trees", "records": 2}, {"label": "Excavation (Hand)", "records": 1}, {"label": "Water and/or Wind Action", "records": 1}, {"label": "Aquaculture", "records": 1}, {"label": "Excavation (Unclassified)", "records": 1}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -290,7 +290,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Coastal Erosion/Retreat", "records": 4}, {"label": "Clearance (Bulldozing/Levelling)", "records": 3}, {"label": "Vegetation/Crops/Trees", "records": 2}, {"label": "Clearance (Unclassified)", "records": 2}, {"label": "Excavation (Hand)", "records": 1}, {"label": "Water and/or Wind Action", "records": 1}, {"label": "Aquaculture", "records": 1}, {"label": "Excavation (Unclassified)", "records": 1}], {
+                Plot.text([{"label": "Clearance (Unclassified)", "records": 5}, {"label": "Coastal Erosion/Retreat", "records": 4}, {"label": "Clearance (Bulldozing/Levelling)", "records": 3}, {"label": "Vegetation/Crops/Trees", "records": 2}, {"label": "Excavation (Hand)", "records": 1}, {"label": "Water and/or Wind Action", "records": 1}, {"label": "Aquaculture", "records": 1}, {"label": "Excavation (Unclassified)", "records": 1}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -304,7 +304,7 @@ display(await(
 ))
 }});
 
-define({id: "7b89070d", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "d6bbbbd7", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -314,14 +314,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Water and/or Wind Action", "records": 10}, {"label": "Road/Track", "records": 2}, {"label": "Occupation/Continued Use", "records": 1}, {"label": "Wind Action", "records": 1}, {"label": "Construction", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}], {
+                Plot.barX([{"label": "Water and/or Wind Action", "records": 9}, {"label": "Road/Track", "records": 2}, {"label": "Wind Action", "records": 1}, {"label": "Occupation/Continued Use", "records": 1}, {"label": "Construction", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 10}, {"label": "Road/Track", "records": 2}, {"label": "Occupation/Continued Use", "records": 1}, {"label": "Wind Action", "records": 1}, {"label": "Construction", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 9}, {"label": "Road/Track", "records": 2}, {"label": "Wind Action", "records": 1}, {"label": "Occupation/Continued Use", "records": 1}, {"label": "Construction", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -329,7 +329,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 10}, {"label": "Road/Track", "records": 2}, {"label": "Occupation/Continued Use", "records": 1}, {"label": "Wind Action", "records": 1}, {"label": "Construction", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 9}, {"label": "Road/Track", "records": 2}, {"label": "Wind Action", "records": 1}, {"label": "Occupation/Continued Use", "records": 1}, {"label": "Construction", "records": 1}, {"label": "Clearance (Bulldozing/Levelling)", "records": 1}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -343,7 +343,7 @@ display(await(
 ))
 }});
 
-define({id: "16b152d2", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
+define({id: "4af0e154", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
         label: "Disturbance Causes",
@@ -353,14 +353,14 @@ display(await(
         x: { axis: null },
         y: { axis: null },
         marks: [
-                Plot.barX([{"label": "Water and/or Wind Action", "records": 8}], {
+                Plot.barX([{"label": "Water and/or Wind Action", "records": 11}], {
                         x: "records",
                         y: "label",
                         color: { legend: false },
                         fill: "label",
                         sort: { y: "x", reverse: true }
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 8}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 11}], {
                         text: d => `${ d.records }`,
                         x: "records",
                         y: "label",
@@ -368,7 +368,7 @@ display(await(
                         dx: 3,
                         fill: "white"
                 }),
-                Plot.text([{"label": "Water and/or Wind Action", "records": 8}], {
+                Plot.text([{"label": "Water and/or Wind Action", "records": 11}], {
                         text: d => d.label,
                         textAnchor: "end",
                         x: 0,
@@ -460,45 +460,6 @@ display(await(
 ))
 }});
 
-define({id: "b8b2c567", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
-display(await(
-    resize((width) => Plot.plot({
-        label: "Disturbance Causes",
-        marginLeft: 250,
-        marginRight: 30,
-        width: width,
-        x: { axis: null },
-        y: { axis: null },
-        marks: [
-                Plot.barX([{"label": "Water Action", "records": 1}], {
-                        x: "records",
-                        y: "label",
-                        color: { legend: false },
-                        fill: "label",
-                        sort: { y: "x", reverse: true }
-                }),
-                Plot.text([{"label": "Water Action", "records": 1}], {
-                        text: d => `${ d.records }`,
-                        x: "records",
-                        y: "label",
-                        textAnchor: "start",
-                        dx: 3,
-                        fill: "white"
-                }),
-                Plot.text([{"label": "Water Action", "records": 1}], {
-                        text: d => d.label,
-                        textAnchor: "end",
-                        x: 0,
-                        y: "label",
-                        dx: -3,
-                        fill: "white"
-                })
-        ]
-    }))
-  
-))
-}});
-
 define({id: "9a52b47a", inline: true, inputs: ["resize","Plot","display"], body: async (resize,Plot,display) => {
 display(await(
     resize((width) => Plot.plot({
@@ -554,7 +515,7 @@ display(await(
 </style>
 <h1 id="marea-stats-page" tabindex="-1"><a class="observablehq-header-anchor" href="#marea-stats-page">MarEA Stats Page</a></h1>
 <div class="card">
-<p><img src="./_file/map_20260904.6ca736fe.png" alt="Progress map"></p>
+<p><img src="./_file/map_20260905.6ca736fe.png" alt="Progress map"></p>
 </div>
 <h2 id="site-documentation" tabindex="-1"><a class="observablehq-header-anchor" href="#site-documentation">Site Documentation</a></h2>
 <div class="grid grid-cols-4">
@@ -568,35 +529,35 @@ display(await(
 <h3 id="tunisia" tabindex="-1"><a class="observablehq-header-anchor" href="#tunisia">Tunisia</a></h3>
 <p>Based on reports of 674 sites, in 64 grids, by Brittni Bradford, Mohamed Haouas, Rached Hamdi, Sophie Tews, Julia Nikolaus, Joan Campmany Jiménez, Nichole Sheldrick, Haythem Abidi, Slim Bechrifia, Julia Nikolaus, Mohamed Rtimi, Dhouha Laribi Galalou, Nizar Ben Slimene, Walid Khalfalli, Riadh Smari, Sonia Slim, Faouzia Ben Zahra, Matt Hobson, Naouel Selmi</p>
 <h4 id="disturbance-causes" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-4db8ea2a" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-7722854c" class="observablehq--loading"></span></div>
 <h3 id="saudi-arabia" tabindex="-1"><a class="observablehq-header-anchor" href="#saudi-arabia">Saudi Arabia</a></h3>
 <p>Based on reports of 152 sites, in 16 grids, by Rodrigo Ortiz-Vazquez, Mohamed Osman</p>
 <h4 id="disturbance-causes-1" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-1">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-e90b3b6e" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-27a690fd" class="observablehq--loading"></span></div>
 <h3 id="algeria" tabindex="-1"><a class="observablehq-header-anchor" href="#algeria">Algeria</a></h3>
 <p>Based on reports of 406 sites, in 30 grids, by Jen Makovics, Mohamed Kenawi, Brittni Bradford</p>
 <h4 id="disturbance-causes-2" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-2">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-1a0a8cdb" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-3eae3675" class="observablehq--loading"></span></div>
 <h3 id="kuwait" tabindex="-1"><a class="observablehq-header-anchor" href="#kuwait">Kuwait</a></h3>
 <p>Based on reports of 276 sites, in 15 grids, by Rodrigo Ortiz-Vazquez</p>
 <h4 id="disturbance-causes-3" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-3">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-e5cd8f46" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-296ffed8" class="observablehq--loading"></span></div>
 <h3 id="libya" tabindex="-1"><a class="observablehq-header-anchor" href="#libya">Libya</a></h3>
 <p>Based on reports of 208 sites, in 56 grids, by Julia Nikolaus, Heike Moeller, Julia Nikolaus, Brittni Bradford, Andrea Zerbini</p>
 <h4 id="disturbance-causes-4" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-4">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-136749f6" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-8ccee9ba" class="observablehq--loading"></span></div>
 <h3 id="egypt" tabindex="-1"><a class="observablehq-header-anchor" href="#egypt">Egypt</a></h3>
 <p>Based on reports of 454 sites, in 89 grids, by Mohamed Osman, Mohamed Ashmawy, Yasser Karakiri, Nick Ray, Julia Nikolaus, Julia Nikolaus, Mohamed Kenawi</p>
 <h4 id="disturbance-causes-5" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-5">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-806c5fe6" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-2c3fa307" class="observablehq--loading"></span></div>
 <h3 id="yemen" tabindex="-1"><a class="observablehq-header-anchor" href="#yemen">Yemen</a></h3>
 <p>Based on reports of 76 sites, in 51 grids, by Julia Nikolaus, Andrea Zerbini, Harmen Huigens, Michael Fradley</p>
 <h4 id="disturbance-causes-6" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-6">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-7b89070d" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-d6bbbbd7" class="observablehq--loading"></span></div>
 <h3 id="iraq" tabindex="-1"><a class="observablehq-header-anchor" href="#iraq">Iraq</a></h3>
 <p>Based on reports of 26 sites, in 1 grids, by Rodrigo Ortiz-Vazquez</p>
 <h4 id="disturbance-causes-7" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-7">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-16b152d2" class="observablehq--loading"></span></div>
+<div class="card"><span id="cell-4af0e154" class="observablehq--loading"></span></div>
 <h3 id="united-arab-emirates" tabindex="-1"><a class="observablehq-header-anchor" href="#united-arab-emirates">United Arab Emirates</a></h3>
 <p>Based on reports of 7 sites, in 1 grids, by Rodrigo Ortiz-Vazquez</p>
 <h4 id="disturbance-causes-8" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-8">Disturbance Causes</a></h4>
@@ -605,16 +566,12 @@ display(await(
 <p>Based on reports of 5 sites, in 1 grids, by Rodrigo Ortiz-Vazquez</p>
 <h4 id="disturbance-causes-9" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-9">Disturbance Causes</a></h4>
 <div class="card"><span id="cell-d572fe73" class="observablehq--loading"></span></div>
-<h3 id="syrian-arab-republic" tabindex="-1"><a class="observablehq-header-anchor" href="#syrian-arab-republic">Syrian Arab Republic</a></h3>
-<p>Based on reports of 1 sites, in 1 grids, by Kieran Westley, Kristen Hopper</p>
-<h4 id="disturbance-causes-10" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-10">Disturbance Causes</a></h4>
-<div class="card"><span id="cell-b8b2c567" class="observablehq--loading"></span></div>
 <h3 id="jordan" tabindex="-1"><a class="observablehq-header-anchor" href="#jordan">Jordan</a></h3>
 <p>Based on reports of 1 sites, in 1 grids, by Rebecca Banks, Pascal Flohr, Brittni Bradford</p>
-<h4 id="disturbance-causes-11" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-11">Disturbance Causes</a></h4>
+<h4 id="disturbance-causes-10" tabindex="-1"><a class="observablehq-header-anchor" href="#disturbance-causes-10">Disturbance Causes</a></h4>
 <div class="card"><span id="cell-9a52b47a" class="observablehq--loading"></span></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-09-04T05:50:36">Sep 4, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-09-05T05:50:39">Sep 5, 2026</a>.</div>
 </footer>
 </div>
